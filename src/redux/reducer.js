@@ -12,8 +12,10 @@ export const cartData =(data=[], action) => {
     case REMOVE_FROM_CART:
     //add to act logic 
     console.log("REMOVE_FROM_CART condition", action);
-    let newData =data.slice(0, data.length -1)
-    return [...newData]
+    // let newData =data.slice(0, data.length -1)
+    const remainingItem = data.filter((item)=>item.id!==action.data);
+    console.log("remainingItem",remainingItem)
+    return [...remainingItem]
 
     case EMPTY_CART:
     //add to act logic 
