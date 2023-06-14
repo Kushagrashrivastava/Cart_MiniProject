@@ -19,6 +19,6 @@ export const removeFromCart = (data) =>{
 export const emptyCart = () =>{
     console.log("action emptyCart")
     return {
-        type: EMPTY_CART
+        type: EMPTY_CART,
     }
 }

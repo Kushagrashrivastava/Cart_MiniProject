@@ -6,20 +6,20 @@ export const cartData =(data=[], action) => {
     switch(action.type){
     case ADD_TO_CART:
     //add to act logic 
-    console.log("ADD_TO_CART condition", action)
+    console.log("ADD_TO_CART condition", action);
     return [action.data, ...data]
 
     case REMOVE_FROM_CART:
     //add to act logic 
-    console.log("REMOVE_FROM_CART condition", action)
-    data.length=data.length? data.length-1:[]
-    return [...data]
+    console.log("REMOVE_FROM_CART condition", action);
+    let newData =data.slice(0, data.length -1)
+    return [...newData]
 
     case EMPTY_CART:
     //add to act logic 
-    console.log("EMPTY_CART condition", action)
-    data.length=[]
-    return []
+    console.log("EMPTY_CART condition", action);
+    data=[]
+    return [...data]
 
 
     default:
